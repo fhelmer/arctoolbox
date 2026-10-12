@@ -14,7 +14,6 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "ARC toolbox"
