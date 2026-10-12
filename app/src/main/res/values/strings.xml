@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">ARC Toolbox</string>
+    <string name="status_format">Status: %s</string>
+    <string name="status_na">N/A</string>
+    <string name="status_querying_gps">Querying GPS location…</string>
+    <string name="status_updated_gps">Updated GPS location at %s</string>
+    <string name="status_sending_email">Opening email client…</string>
+    <string name="status_done">Done</string>
+    <string name="status_gps_disabled">GPS is disabled in device settings</string>
+    <string name="mmsi_hint">MMSI (e.g. 123456789)</string>
+    <string name="email_hint">To address</string>
+    <string name="default_email">report@marinetraffic.com</string>
+    <string name="latitude_label">Latitude:</string>
+    <string name="longitude_label">Longitude:</string>
+    <string name="heading_label">Heading (°):</string>
+    <string name="speed_label">Speed (knots):</string>
+    <string name="utc_time_label">UTC time:</string>
+    <string name="btn_update_position">Update position</string>
+    <string name="btn_send_email">Send position e-mail</string>
+    <string name="toast_no_permission">No permission to access GPS location (check settings)</string>
+    <string name="toast_approximate_only">Only approximate location access granted (precise location required)</string>
+    <string name="toast_no_email_client">There are no email clients installed.</string>
+    <string name="toast_no_fix_yet">Please wait for a GPS position fix before sending report.</string>
+    <string name="toast_mmsi_required">Please enter an MMSI number before sending.</string>
+    <string name="email_chooser_title">Select an email client</string>
+    <string name="email_subject">Position report</string>
 </resources>
