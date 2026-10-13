@@ -128,11 +128,18 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
-        final Button button = findViewById(R.id.btnGetLocation);
-        button.setOnClickListener(v -> requestLocation());
+        requestLocation();
 
         final Button emailButton = findViewById(R.id.btnEmail);
         emailButton.setOnClickListener(v -> onSendEmailClicked());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            startLocationUpdates();
+        }
     }
 
     private void requestLocation() {
@@ -193,6 +200,12 @@ public class MainActivity extends AppCompatActivity {
         String mmsi = editTextMMSI.getText().toString().trim();
         if (mmsi.isEmpty()) {
             Toast.makeText(this, R.string.toast_mmsi_required, Toast.LENGTH_SHORT).show();
+            editTextMMSI.requestFocus();
+            return;
+        }
+
+        if (!PositionReportHelper.isValidMmsi(mmsi)) {
+            Toast.makeText(this, R.string.toast_mmsi_invalid, Toast.LENGTH_SHORT).show();
             editTextMMSI.requestFocus();
             return;
         }
